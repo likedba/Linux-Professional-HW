@@ -38,3 +38,4 @@ aleksei@vmubuntu-1:~$ uname -r
 6.16.0-061600rc3-generic
 # ядро успешно обновлено
 ```
+![image](https://github.com/user-attachments/assets/4751de50-f009-4b3f-b7a1-c209ebdc5971)
