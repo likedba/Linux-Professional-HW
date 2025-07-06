@@ -1,10 +1,13 @@
 # Raid
 
 1. посмотрим, какие блочные устройства у нас есть (добавлено 8 дисков через ui vmware)
+
 `lsblk`
+
 ![image](https://github.com/user-attachments/assets/913e93e8-b328-4cbf-9378-67e679773ceb)
 
-2. Создаем raid10
+3. Создаем raid10
+
 ```bash
 sudo mdadm --create /dev/md0 --level=10 --raid-devices=8 /dev/sd{b..i}
 mdadm: Defaulting to version 1.2 metadata
