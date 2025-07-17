@@ -1,15 +1,18 @@
-## LVM-1
+# LVM-1
 1. Смотрим какие диски присутствуют в системе, после их добавления в ui vmware
+
 `lsblk`
+
 <img width="509" height="181" alt="image" src="https://github.com/user-attachments/assets/cd27b565-5ffa-4c9b-85ca-1b11b510f0b1" />
+
 `lvmdiskscan`
 <img width="404" height="164" alt="image" src="https://github.com/user-attachments/assets/78c75b22-15ed-4800-a5a6-34f73999b921" />
-2. Разметим диск для будущего использования LVM - создадим PV
+3. Разметим диск для будущего использования LVM - создадим PV
 `pvcreate /dev/sdb`
-3. Затем можно создавать первый уровень абстракции - VG
+4. Затем можно создавать первый уровень абстракции - VG
 `vgcreate otus /dev/sdb`
 
-4. Создадим Logical Volume
+5. Создадим Logical Volume
 `lvcreate -l+80%FREE -n test otus`
 6. Посмотрим информацию о только что созданном Volume Group
 `vgdisplay otus`
