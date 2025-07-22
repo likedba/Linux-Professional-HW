@@ -5,9 +5,10 @@
 <img width="507" height="246" alt="image" src="https://github.com/user-attachments/assets/63f123dc-18ec-4fd9-bfbd-0423c1c1c4d9" />
 
 2. Установим ZFS
+
 `sudo apt install zfsutils-linux`
 
-3. Создадим несколько пулов из raid1
+4. Создадим несколько пулов из raid1
 ```bash
 zpool create otus1 mirror /dev/sdb /dev/sdc
 zpool create otus2 mirror /dev/sdd /dev/sde
@@ -56,10 +57,12 @@ tar -xzvf archive.tar.gz
 ```
 
 3. Проверим, возможно ли импортировать данный каталог в пул
+
 `zpool import -d zpoolexport/`
+
 <img width="645" height="212" alt="image" src="https://github.com/user-attachments/assets/207fcb11-0801-4b48-8caa-21542c650434" />
 
-4. Импорт пула в ОС
+5. Импорт пула в ОС
 ```bash
 zpool import -d zpoolexport/ otus
 zpool status
