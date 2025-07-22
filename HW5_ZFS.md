@@ -67,28 +67,37 @@ zpool status
 zpool get all otus
 zfs get available otus
 ```
+
 <img width="250" height="31" alt="image" src="https://github.com/user-attachments/assets/8657780d-22df-452c-a90e-e05a57b3d8b4" />
+
 `zfs get readonly otus`
+
 <img width="261" height="31" alt="image" src="https://github.com/user-attachments/assets/480b976d-7b98-4bcd-b503-8f0a676b593f" />
 
 `zfs get recordsize otus`
+
 <img width="299" height="33" alt="image" src="https://github.com/user-attachments/assets/4e80ce32-c6a9-4c25-b766-3566c05c932e" />
 
 `zfs get compression otus`
+
 <img width="338" height="33" alt="image" src="https://github.com/user-attachments/assets/7c0b921a-e50b-4551-b1d3-cf17989d6728" />
 
 `zfs get checksum otus`
+
 <img width="268" height="33" alt="image" src="https://github.com/user-attachments/assets/d530d00d-9b09-458b-b511-c5397fdff3d4" />
 
 ## Работа со снапшотом, поиск сообщения от преподавателя
 
 1. Скачать файл
+
 `wget -O otus_task2.file --no-check-certificate https://drive.usercontent.google.com/download?id=1wgxjih8YZ-cqLqaZVa0lA3h3Y029c3oI&export=download`
 
-2. Восстановим файловую систему из снапшота
+3. Восстановим файловую систему из снапшота
+
 `zfs receive otus/test@today < otus_task2.file`
 
-3. Поиск сообщения
+5. Поиск сообщения
+
 `find /otus/test -name "secret_message"`
 
 `cat /otus/test/task1/file_mess/secret_message`
