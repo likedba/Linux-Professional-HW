@@ -32,9 +32,7 @@ zfs get all | grep compression
 
 6. Скачаем один и тот же файл во все пулы
 
-`for i in {1..4}; do wget -P /otus$i` 
-
-https://gutenberg.org/cache/epub/2600/pg2600.converter.log; done
+`for i in {1..4}; do wget -P /otus$i https://gutenberg.org/cache/epub/2600/pg2600.converter.log; done`
 
 `ls -l /otus*`
 
