@@ -31,10 +31,14 @@ ls /new*
 <img width="726" height="404" alt="image" src="https://github.com/user-attachments/assets/a9dab434-915f-4c85-9760-c21b7379e838" />  
 <img width="710" height="390" alt="image" src="https://github.com/user-attachments/assets/21e83c09-335d-4b81-98df-84b009de7b1c" />  
 <img width="713" height="409" alt="image" src="https://github.com/user-attachments/assets/24ac222b-6c77-4da9-a1ea-fb1ce1755c48" />  
+
 `vgs`  
+
 <img width="400" height="50" alt="image" src="https://github.com/user-attachments/assets/4239a910-ec91-4bba-a145-6e6b0f09c814" />  
+
 `vgrename ubuntu-vg ubuntu-otus`  
 `vim /boot/grub/grub.cfg`  
+
 Меняем везде название vg на новое  
 `reboot`  
 <img width="524" height="182" alt="image" src="https://github.com/user-attachments/assets/58e58de0-8a65-4706-ad9d-9e959bb91ce1" />  
