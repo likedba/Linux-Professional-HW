@@ -12,9 +12,9 @@ reboot
 ```  
 <img width="914" height="683" alt="image" src="https://github.com/user-attachments/assets/f165026c-47f9-4079-9412-8f517f306f0f" />  
 
-2. Попасть в систему без пароля несколькими способами. Способ 1
+2. Попасть в систему без пароля несколькими способами. Способ 1  
 <img width="640" height="377" alt="image" src="https://github.com/user-attachments/assets/ce4f7549-0b2b-42aa-ac16-a7b58f0976f6" />  
-изменена строка, начинающаяся с linux, добавлено в конец init=/bin/bash и сtrl-x с загрузкой в систему
+изменена строка, начинающаяся с linux, добавлено в конец init=/bin/bash и сtrl-x с загрузкой в систему  
 <img width="453" height="80" alt="image" src="https://github.com/user-attachments/assets/31d5040d-22cc-4197-92c6-0bd0f44b8d7f" />  
 ```bash
 mount -o remount,rw /
