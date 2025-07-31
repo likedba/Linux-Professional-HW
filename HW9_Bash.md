@@ -87,5 +87,5 @@ rm -f $MAIL_FILE
 `apt install mailutils`  
 
 5. Добавим скрипт в крон  
-`crontab -e`
+`crontab -e`  
 `0 * * * * /usr/local/bin/nginx_monitor.sh`
