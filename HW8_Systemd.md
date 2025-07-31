@@ -72,7 +72,7 @@ WantedBy=multi-user.target
 `systemctl start watchlog.timer`  
 <img width="832" height="395" alt="image" src="https://github.com/user-attachments/assets/53e6ae07-cc91-4401-af4a-60ffc0d9cec4" />  
 
-#Установить spawn-fcgi и создать unit-файл (spawn-fcgi.sevice) с помощью переделки init-скрипта  
+# Установить spawn-fcgi и создать unit-файл (spawn-fcgi.sevice) с помощью переделки init-скрипта  
 
 8. Устанавливаем spawn-fcgi и необходимые для него пакеты  
 `apt install spawn-fcgi php php-cgi php-cli apache2 libapache2-mod-fcgid -y`  
