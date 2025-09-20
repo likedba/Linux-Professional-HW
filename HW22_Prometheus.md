@@ -179,6 +179,62 @@ sudo systemctl start prometheus
 sudo systemctl enable prometheus
 
 Проверяем работу сервера prometeus
+<img width="903" height="973" alt="image" src="https://github.com/user-attachments/assets/1834cd39-df5d-4ba7-a085-897b7c9484af" />
 
+Установка сервера Grafana
+sudo apt install postgresql postgresql-contrib -y
+su postgres
+psql
+CREATE USER grafana WITH ENCRYPTED PASSWORD 'grafana';
+CREATE DATABASE grafana;
+ALTER DATABASE grafana owner to grafana;
 
+sudo apt install -y adduser libfontconfig1 musl-dev
+wget https://dl.grafana.com/oss/release/grafana_10.5.3_amd64.deb
+sudo dpkg -i grafana_10.5.3_amd64.deb
+sudo apt install -f -y
+
+sudo tee /etc/grafana/grafana.ini > /dev/null <<EOF
+[server]
+http_port = 3000
+domain = localhost
+
+[database]
+type = postgres
+host = localhost:5432
+name = grafana
+user = grafana
+password = grafana
+ssl_mode = disable
+
+[security]
+admin_user = admin
+admin_password = admin
+
+[paths]
+data = /var/lib/grafana
+logs = /var/log/grafana
+plugins = /var/lib/grafana/plugins
+EOF
+
+sudo chown -R grafana:grafana /etc/grafana /var/lib/grafana /var/log/grafana
+sudo systemctl daemon-reload
+sudo systemctl enable grafana-server
+sudo systemctl start grafana-server
+<img width="936" height="957" alt="image" src="https://github.com/user-attachments/assets/a3683749-ffb1-4d5e-8210-f090c691befa" />
+
+добавляем datasource prometheus
+<img width="874" height="761" alt="image" src="https://github.com/user-attachments/assets/8e355959-8ee6-4c86-914d-5509773bb500" />
+
+импортируем два дашборда под нод экспортер и под постгрес экспортер
+
+<img width="1867" height="974" alt="image" src="https://github.com/user-attachments/assets/eb16dce1-7142-4e4d-9579-4a1a368c42f0" />
+<img width="1869" height="978" alt="image" src="https://github.com/user-attachments/assets/598236df-6e64-4384-8c5c-6d78477ad8a2" />
+
+Подадим нагрузкку на БД и посмотрим как это отобразится на мониторинге
+с хоста vmubuntu-8
+psql -h vmpatronidb1-test-17 -U postgres -c "CREATE DATABASE pgbench_test;"
+pgbench -h vmpatronidb1-test-17 -U postgres -i -s 10 pgbench_test
+
+<img width="1860" height="998" alt="image" src="https://github.com/user-attachments/assets/0b3d75cd-9a05-4af1-80c4-9c8bb65a1c07" />
 
