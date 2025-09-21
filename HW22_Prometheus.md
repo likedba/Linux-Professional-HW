@@ -235,7 +235,7 @@ sudo systemctl start grafana-server
 <img width="1867" height="974" alt="image" src="https://github.com/user-attachments/assets/eb16dce1-7142-4e4d-9579-4a1a368c42f0" />
 <img width="1869" height="978" alt="image" src="https://github.com/user-attachments/assets/598236df-6e64-4384-8c5c-6d78477ad8a2" />
   
-## 13. Подадим нагрузкку на БД и посмотрим как это отобразится на мониторинге  
+## 13. Нагрузим БД и проверим визуализацию  
 с хоста vmubuntu-8  
 ```bash
 psql -h vmpatronidb1-test-17 -U postgres -c "CREATE DATABASE pgbench_test;"
